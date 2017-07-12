@@ -1,0 +1,78 @@
+C:\Users\lananthanara\Documents\Visual Studio 2015\Projects\HealthcareBot\HealthcareBot\bin\Bot Application1.dll.config
+C:\Users\lananthanara\Documents\Visual Studio 2015\Projects\HealthcareBot\HealthcareBot\bin\Bot Application1.dll
+C:\Users\lananthanara\Documents\Visual Studio 2015\Projects\HealthcareBot\HealthcareBot\bin\Bot Application1.pdb
+C:\Users\lananthanara\Documents\Visual Studio 2015\Projects\HealthcareBot\HealthcareBot\bin\Autofac.dll
+C:\Users\lananthanara\Documents\Visual Studio 2015\Projects\HealthcareBot\HealthcareBot\bin\Chronic.dll
+C:\Users\lananthanara\Documents\Visual Studio 2015\Projects\HealthcareBot\HealthcareBot\bin\Microsoft.Bot.Builder.dll
+C:\Users\lananthanara\Documents\Visual Studio 2015\Projects\HealthcareBot\HealthcareBot\bin\Microsoft.Bot.Connector.dll
+C:\Users\lananthanara\Documents\Visual Studio 2015\Projects\HealthcareBot\HealthcareBot\bin\Microsoft.IdentityModel.Protocol.Extensions.dll
+C:\Users\lananthanara\Documents\Visual Studio 2015\Projects\HealthcareBot\HealthcareBot\bin\Microsoft.Rest.ClientRuntime.dll
+C:\Users\lananthanara\Documents\Visual Studio 2015\Projects\HealthcareBot\HealthcareBot\bin\Microsoft.WindowsAzure.Configuration.dll
+C:\Users\lananthanara\Documents\Visual Studio 2015\Projects\HealthcareBot\HealthcareBot\bin\Newtonsoft.Json.dll
+C:\Users\lananthanara\Documents\Visual Studio 2015\Projects\HealthcareBot\HealthcareBot\bin\System.IdentityModel.Tokens.Jwt.dll
+C:\Users\lananthanara\Documents\Visual Studio 2015\Projects\HealthcareBot\HealthcareBot\bin\System.Net.Http.Formatting.dll
+C:\Users\lananthanara\Documents\Visual Studio 2015\Projects\HealthcareBot\HealthcareBot\bin\System.Web.Http.dll
+C:\Users\lananthanara\Documents\Visual Studio 2015\Projects\HealthcareBot\HealthcareBot\bin\System.Web.Http.WebHost.dll
+C:\Users\lananthanara\Documents\Visual Studio 2015\Projects\HealthcareBot\HealthcareBot\bin\Autofac.xml
+C:\Users\lananthanara\Documents\Visual Studio 2015\Projects\HealthcareBot\HealthcareBot\bin\Microsoft.Bot.Builder.xml
+C:\Users\lananthanara\Documents\Visual Studio 2015\Projects\HealthcareBot\HealthcareBot\bin\Microsoft.Bot.Connector.xml
+C:\Users\lananthanara\Documents\Visual Studio 2015\Projects\HealthcareBot\HealthcareBot\bin\Microsoft.IdentityModel.Protocol.Extensions.pdb
+C:\Users\lananthanara\Documents\Visual Studio 2015\Projects\HealthcareBot\HealthcareBot\bin\Microsoft.IdentityModel.Protocol.Extensions.xml
+C:\Users\lananthanara\Documents\Visual Studio 2015\Projects\HealthcareBot\HealthcareBot\bin\Microsoft.Rest.ClientRuntime.xml
+C:\Users\lananthanara\Documents\Visual Studio 2015\Projects\HealthcareBot\HealthcareBot\bin\Microsoft.WindowsAzure.Configuration.xml
+C:\Users\lananthanara\Documents\Visual Studio 2015\Projects\HealthcareBot\HealthcareBot\bin\Newtonsoft.Json.xml
+C:\Users\lananthanara\Documents\Visual Studio 2015\Projects\HealthcareBot\HealthcareBot\bin\System.IdentityModel.Tokens.Jwt.pdb
+C:\Users\lananthanara\Documents\Visual Studio 2015\Projects\HealthcareBot\HealthcareBot\bin\System.IdentityModel.Tokens.Jwt.xml
+C:\Users\lananthanara\Documents\Visual Studio 2015\Projects\HealthcareBot\HealthcareBot\bin\System.Net.Http.Formatting.xml
+C:\Users\lananthanara\Documents\Visual Studio 2015\Projects\HealthcareBot\HealthcareBot\bin\System.Web.Http.xml
+C:\Users\lananthanara\Documents\Visual Studio 2015\Projects\HealthcareBot\HealthcareBot\bin\System.Web.Http.WebHost.xml
+C:\Users\lananthanara\Documents\Visual Studio 2015\Projects\HealthcareBot\HealthcareBot\bin\ar\Microsoft.Bot.Builder.resources.dll
+C:\Users\lananthanara\Documents\Visual Studio 2015\Projects\HealthcareBot\HealthcareBot\bin\en\Microsoft.Bot.Builder.resources.dll
+C:\Users\lananthanara\Documents\Visual Studio 2015\Projects\HealthcareBot\HealthcareBot\bin\es\Microsoft.Bot.Builder.resources.dll
+C:\Users\lananthanara\Documents\Visual Studio 2015\Projects\HealthcareBot\HealthcareBot\bin\fa\Microsoft.Bot.Builder.resources.dll
+C:\Users\lananthanara\Documents\Visual Studio 2015\Projects\HealthcareBot\HealthcareBot\bin\fr\Microsoft.Bot.Builder.resources.dll
+C:\Users\lananthanara\Documents\Visual Studio 2015\Projects\HealthcareBot\HealthcareBot\bin\ja\Microsoft.Bot.Builder.resources.dll
+C:\Users\lananthanara\Documents\Visual Studio 2015\Projects\HealthcareBot\HealthcareBot\bin\ru\Microsoft.Bot.Builder.resources.dll
+C:\Users\lananthanara\Documents\Visual Studio 2015\Projects\HealthcareBot\HealthcareBot\bin\zh-hans\Microsoft.Bot.Builder.resources.dll
+C:\Users\lananthanara\Documents\Visual Studio 2015\Projects\HealthcareBot\HealthcareBot\obj\Debug\HealthcareBot.csprojResolveAssemblyReference.cache
+C:\Users\lananthanara\Documents\Visual Studio 2015\Projects\HealthcareBot\HealthcareBot\obj\Debug\Bot Application1.dll
+C:\Users\lananthanara\Documents\Visual Studio 2015\Projects\HealthcareBot\HealthcareBot\obj\Debug\Bot Application1.pdb
+C:\Work\ChatBot\MicrosoftBot\HealthcareBot\HealthcareBot\bin\Bot Application1.dll.config
+C:\Work\ChatBot\MicrosoftBot\HealthcareBot\HealthcareBot\bin\Bot Application1.dll
+C:\Work\ChatBot\MicrosoftBot\HealthcareBot\HealthcareBot\bin\Bot Application1.pdb
+C:\Work\ChatBot\MicrosoftBot\HealthcareBot\HealthcareBot\bin\Autofac.dll
+C:\Work\ChatBot\MicrosoftBot\HealthcareBot\HealthcareBot\bin\Chronic.dll
+C:\Work\ChatBot\MicrosoftBot\HealthcareBot\HealthcareBot\bin\Microsoft.Bot.Builder.dll
+C:\Work\ChatBot\MicrosoftBot\HealthcareBot\HealthcareBot\bin\Microsoft.Bot.Connector.dll
+C:\Work\ChatBot\MicrosoftBot\HealthcareBot\HealthcareBot\bin\Microsoft.IdentityModel.Protocol.Extensions.dll
+C:\Work\ChatBot\MicrosoftBot\HealthcareBot\HealthcareBot\bin\Microsoft.Rest.ClientRuntime.dll
+C:\Work\ChatBot\MicrosoftBot\HealthcareBot\HealthcareBot\bin\Microsoft.WindowsAzure.Configuration.dll
+C:\Work\ChatBot\MicrosoftBot\HealthcareBot\HealthcareBot\bin\Newtonsoft.Json.dll
+C:\Work\ChatBot\MicrosoftBot\HealthcareBot\HealthcareBot\bin\System.IdentityModel.Tokens.Jwt.dll
+C:\Work\ChatBot\MicrosoftBot\HealthcareBot\HealthcareBot\bin\System.Net.Http.Formatting.dll
+C:\Work\ChatBot\MicrosoftBot\HealthcareBot\HealthcareBot\bin\System.Web.Http.dll
+C:\Work\ChatBot\MicrosoftBot\HealthcareBot\HealthcareBot\bin\System.Web.Http.WebHost.dll
+C:\Work\ChatBot\MicrosoftBot\HealthcareBot\HealthcareBot\bin\Autofac.xml
+C:\Work\ChatBot\MicrosoftBot\HealthcareBot\HealthcareBot\bin\Microsoft.Bot.Builder.xml
+C:\Work\ChatBot\MicrosoftBot\HealthcareBot\HealthcareBot\bin\Microsoft.Bot.Connector.xml
+C:\Work\ChatBot\MicrosoftBot\HealthcareBot\HealthcareBot\bin\Microsoft.IdentityModel.Protocol.Extensions.pdb
+C:\Work\ChatBot\MicrosoftBot\HealthcareBot\HealthcareBot\bin\Microsoft.IdentityModel.Protocol.Extensions.xml
+C:\Work\ChatBot\MicrosoftBot\HealthcareBot\HealthcareBot\bin\Microsoft.Rest.ClientRuntime.xml
+C:\Work\ChatBot\MicrosoftBot\HealthcareBot\HealthcareBot\bin\Microsoft.WindowsAzure.Configuration.xml
+C:\Work\ChatBot\MicrosoftBot\HealthcareBot\HealthcareBot\bin\Newtonsoft.Json.xml
+C:\Work\ChatBot\MicrosoftBot\HealthcareBot\HealthcareBot\bin\System.IdentityModel.Tokens.Jwt.pdb
+C:\Work\ChatBot\MicrosoftBot\HealthcareBot\HealthcareBot\bin\System.IdentityModel.Tokens.Jwt.xml
+C:\Work\ChatBot\MicrosoftBot\HealthcareBot\HealthcareBot\bin\System.Net.Http.Formatting.xml
+C:\Work\ChatBot\MicrosoftBot\HealthcareBot\HealthcareBot\bin\System.Web.Http.xml
+C:\Work\ChatBot\MicrosoftBot\HealthcareBot\HealthcareBot\bin\System.Web.Http.WebHost.xml
+C:\Work\ChatBot\MicrosoftBot\HealthcareBot\HealthcareBot\bin\ar\Microsoft.Bot.Builder.resources.dll
+C:\Work\ChatBot\MicrosoftBot\HealthcareBot\HealthcareBot\bin\en\Microsoft.Bot.Builder.resources.dll
+C:\Work\ChatBot\MicrosoftBot\HealthcareBot\HealthcareBot\bin\es\Microsoft.Bot.Builder.resources.dll
+C:\Work\ChatBot\MicrosoftBot\HealthcareBot\HealthcareBot\bin\fa\Microsoft.Bot.Builder.resources.dll
+C:\Work\ChatBot\MicrosoftBot\HealthcareBot\HealthcareBot\bin\fr\Microsoft.Bot.Builder.resources.dll
+C:\Work\ChatBot\MicrosoftBot\HealthcareBot\HealthcareBot\bin\ja\Microsoft.Bot.Builder.resources.dll
+C:\Work\ChatBot\MicrosoftBot\HealthcareBot\HealthcareBot\bin\ru\Microsoft.Bot.Builder.resources.dll
+C:\Work\ChatBot\MicrosoftBot\HealthcareBot\HealthcareBot\bin\zh-hans\Microsoft.Bot.Builder.resources.dll
+C:\Work\ChatBot\MicrosoftBot\HealthcareBot\HealthcareBot\obj\Debug\Bot Application1.dll
+C:\Work\ChatBot\MicrosoftBot\HealthcareBot\HealthcareBot\obj\Debug\Bot Application1.pdb
+C:\Work\ChatBot\MicrosoftBot\HealthcareBot\HealthcareBot\obj\Debug\HealthcareBot.csprojResolveAssemblyReference.cache
