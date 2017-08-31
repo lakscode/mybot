@@ -15,7 +15,11 @@ using Microsoft.Bot.Builder.Dialogs.Internals;
 using Autofac;
 using Microsoft.Bot.Builder.FormFlow;
 
-namespace ZplusBot
+using System.Web.Script.Serialization;
+using System.Text.RegularExpressions;
+using System.Threading;
+using AutoplusBot.Services;
+namespace AutoplusBot
 {
     [BotAuthentication]
     public class MessagesController : ApiController
@@ -25,74 +29,47 @@ namespace ZplusBot
         /// Receive a message from a user and reply to it
         /// </summary>
         /// 
-        public int count = 0;
+
+
 
         public async Task<HttpResponseMessage> Post([FromBody]Activity activity)
         {
 
             if (activity.Type == ActivityTypes.Message )
             {
-                //   ConnectorClient connector = new ConnectorClient(new Uri(activity.ServiceUrl));
-                // calculate something for us to return
-                //  int length = (activity.Text ?? string.Empty).Length;
-
-                // return our reply to the user
-                //   Activity reply = activity.CreateReply($"You sent {activity.Text} which was {length} characters");
-                //  await connector.Conversations.ReplyToActivityAsync(reply);
-
-                await Conversation.SendAsync(activity, () => new RootLuisDialog());
-            }
-            else if (activity.Type == ActivityTypes.ConversationUpdate)
-            {
+                var sQuery = activity.Text;
 
 
-                string replyMessage = "";
-                var msg = "";
 
-                string welcomeString = "";
-                if (DateTime.Now.Hour < 12)
-                {
-                    welcomeString = "Good Morning";
-                }
-                else if (DateTime.Now.Hour < 17)
-                {
-                    welcomeString = "Good Afternoon";
-                }
-                else
-                {
-                    welcomeString = "Good Evening";
-                }
-
-                replyMessage = "Hello! " + welcomeString + ", This is Annie, CSCInsure+ Automated Chatbot. Currently, we are supporting these features: Reset Password. You can type ‘Quit’ to close the conversation. How May I help you?";
-
-                if (activity.MembersAdded.Any(o => o.Id == activity.Recipient.Id))
-                {
-                    var reply = activity.CreateReply(replyMessage);
-
-                    ConnectorClient connector = new ConnectorClient(new Uri(activity.ServiceUrl));
-
-                    await connector.Conversations.ReplyToActivityAsync(reply);
-                }
+                //and even if we reset everything, show the welcome message again
+              //  BotUtils.SendTyping(activity);
 
 
-                //  await Conversation.SendAsync(activity, () => new RootLuisDialog(2));
+
+
+                   await Conversation.SendAsync(activity, () => new RootLuisDialog());
+
+                   
+
+             
+             
+
 
             }
             else
             {
-               HandleSystemMessage(activity);
+                HandleSystemMessage(activity);
             }
             var response = Request.CreateResponse(HttpStatusCode.OK);
-
-           return response;
+            return response;
         }
 
 
+  
+     
 
 
-
-
-        private async Task<Activity> HandleSystemMessage(Activity message)
+        private Task<Activity> HandleSystemMessage(Activity message)
         {
             if (message.Type == ActivityTypes.DeleteUserData)
             {
@@ -101,19 +78,14 @@ namespace ZplusBot
             }
             else if (message.Type == ActivityTypes.ConversationUpdate)
             {
-                // Handle conversation state changes, like members being added and removed
-                // Use Activity.MembersAdded and Activity.MembersRemoved and Activity.Action for info
-                // Not available in all channels
-
-
-
-            }
+            // Handle conversation state changes, like members being added and removed
+            // Use Activity.MembersAdded and Activity.MembersRemoved and Activity.Action for info
+            // Not available in all channels
+        }
             else if (message.Type == ActivityTypes.ContactRelationUpdate)
             {
                 // Handle add/remove from contact lists
                 // Activity.From + Activity.Action represent what happened
-
-
             }
             else if (message.Type == ActivityTypes.Typing)
             {

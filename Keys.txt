@@ -1,0 +1,3 @@
+  <add key="BotId" value="MagnusNew" />
+    <add key="MicrosoftAppId" value="a98f9045-4358-4db8-8b80-b436abd7dae3" />
+    <add key="MicrosoftAppPassword" value="rZ9VrfRCMrazSC7OCnweJpM" />

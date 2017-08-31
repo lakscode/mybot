@@ -3,8 +3,32 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 
-namespace ZplusBot.Services
+namespace AutoplusBot.Services
 {
+
+
+    public class jsonResponseObj
+    {
+        public jsonDocuments documents { get; set; }
+        public string errors { get; set; }
+    }
+
+
+    public class jsonDocuments
+    {
+        public string id { get; set; }
+        public jsonDetectedLanguages detectedLanguages { get; set; }
+    }
+
+    public class jsonDetectedLanguages
+    {
+        public string name { get; set; }
+        public string iso6391Name { get; set; }
+        public string score { get; set; }
+    }
+
+
+
     public class User
     {
     }

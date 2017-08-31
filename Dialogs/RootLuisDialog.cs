@@ -3,7 +3,7 @@
 
 
 
-namespace ZplusBot
+namespace AutoplusBot
 {
     using System;
     using System.Collections.Generic;
@@ -30,6 +30,7 @@ namespace ZplusBot
     using System.Net.Http.Headers;
     using System.Web.Configuration;
     using System.Text.RegularExpressions;
+    using AutoplusBot.Services;
 
     [Serializable]
 #if useSampleModel
@@ -121,10 +122,10 @@ namespace ZplusBot
         [LuisIntent("ThankYou")]
         public async Task ThankYou(IDialogContext context, LuisResult result)
         {
-           // var msg = "Thank you too! Is there anything else I can help you with?";
+            // var msg = "Thank you too! Is there anything else I can help you with?";
 
-          //  await context.PostAsync(msg);
-          //  context.Wait(this.MessageReceived);
+            //  await context.PostAsync(msg);
+            //  context.Wait(this.MessageReceived);
 
             var msg = "Thank you too! Is there anything else I may help you with?\n\nType '**Yes**' or '**No**'";
 
@@ -218,8 +219,8 @@ namespace ZplusBot
 
 
             msg = "Hello! " + welcomeString + ", This is Annie, CSCInsure+ Automated Chatbot. Currently, we are supporting these features: Reset Password. You can type ‘Quit’ to close the conversation. How May I help you?";
-            
-          
+
+
             await context.PostAsync(msg);
             context.Wait(this.MessageReceived);
 
@@ -235,24 +236,32 @@ namespace ZplusBot
 
                 var res = await result;
 
-            var msg = "";
+                var msg = "";
 
-            string USERID = res.USERID;
-            string AssetID = res.AssetID;
-            UserDetailsresults userDetailsResult = await GetUserDetailsAsync(USERID, "");
+                string USERID = res.USERID;
+                string AssetID = res.AssetID;
+                UserDetailsresults userDetailsResult = await GetUserDetailsAsync(USERID, "");
 
-               if(userDetailsResult !=  null)
-            {
-                UserDetails userDetails = userDetailsResult.result;
-
-                if (userDetails.assetId.IndexOf(AssetID) > -1 && userDetails.userName.IndexOf(USERID) > -1)
+                if (userDetailsResult != null)
                 {
-                    gUSERID = USERID;
-                    var form = new QnAFormFlow();
-                    var formDialog = new FormDialog<QnAFormFlow>(form, QnABuildForm, FormOptions.PromptInStart);
-                    context.Call(formDialog, QnAAuthenticate);
+                    UserDetails userDetails = userDetailsResult.result;
+
+                    if (userDetails.assetId.IndexOf(AssetID) > -1 && userDetails.userName.IndexOf(USERID) > -1)
+                    {
+                        gUSERID = USERID;
+                        var form = new QnAFormFlow();
+                        var formDialog = new FormDialog<QnAFormFlow>(form, QnABuildForm, FormOptions.PromptInStart);
+                        context.Call(formDialog, QnAAuthenticate);
 
 
+                    }
+                    else
+                    {
+                        msg = "Sorry, we couldn't authenticate you. Please check your details and contact us again. Have a good day.";
+                        await context.PostAsync(msg);
+                        context.Wait(this.MessageReceived);
+
+                    }
                 }
                 else
                 {
@@ -261,14 +270,6 @@ namespace ZplusBot
                     context.Wait(this.MessageReceived);
 
                 }
-            }
-            else
-            {
-                msg = "Sorry, we couldn't authenticate you. Please check your details and contact us again. Have a good day.";
-                await context.PostAsync(msg);
-                context.Wait(this.MessageReceived);
-
-            }
             }
             catch (FormCanceledException<UserDetailsFormFlow> e)
             {
@@ -286,7 +287,7 @@ namespace ZplusBot
                 await context.PostAsync(reply);
                 context.Wait(this.MessageReceived);
             }
-           
+
         }
 
         public async Task QnAAuthenticate(IDialogContext context, IAwaitable<QnAFormFlow> result)
@@ -296,64 +297,64 @@ namespace ZplusBot
 
                 var res = await result;
 
-            var msg = "";
+                var msg = "";
 
-            string Question1 = res.Question1;
-            string Question2 = res.Question2;
-            string Question3 = res.Question3;
-            string Question4 = res.Question4;
+                string Question1 = res.Question1;
+                string Question2 = res.Question2;
+                string Question3 = res.Question3;
+                string Question4 = res.Question4;
 
-            QnADetails qnADetails = await GetQnADetailsAsync(gUSERID);
-      
-
-            var msg1 = "{ ";
-            msg1 += " \"userName\": \"" + gUSERID + "\",";
-            msg1 += "  \"questionNAnswers\": [";
-            msg1 += "         { ";
-            msg1 += "     \"question\": \"Make of the first car?\",";
-            msg1 += "     \"answer\": \"" + Question1 + "\"";
-            msg1 += "         },";
-            msg1 += "   { ";
-            msg1 += "     \"question\": \"Name of the first pet?\",";
-            msg1 += "     \"answer\": \"" + Question2 + "\"";
-            msg1 += "         },";
-            msg1 += "   {  ";
-            msg1 += "     \"question\": \"Mother's maiden name?\",";
-            msg1 += "     \"answer\": \"" + Question3 + "\"";
-            msg1 += "         },";
-            msg1 += "   {";
-            msg1 += "    \"question\": \"Best friend in school?\",";
-            msg1 += "    \"answer\": \"" + Question4 + "\"";
-            msg1 += "         } ";
-            msg1 += "  ]";
-            msg1 += " }";
-            
-            QnAResult qnARes = await VerifyAnswersAsync(msg1);
+                QnADetails qnADetails = await GetQnADetailsAsync(gUSERID);
 
 
-            if (qnARes.result.IndexOf("true") > -1)
-            {
+                var msg1 = "{ ";
+                msg1 += " \"userName\": \"" + gUSERID + "\",";
+                msg1 += "  \"questionNAnswers\": [";
+                msg1 += "         { ";
+                msg1 += "     \"question\": \"Make of the first car?\",";
+                msg1 += "     \"answer\": \"" + Question1 + "\"";
+                msg1 += "         },";
+                msg1 += "   { ";
+                msg1 += "     \"question\": \"Name of the first pet?\",";
+                msg1 += "     \"answer\": \"" + Question2 + "\"";
+                msg1 += "         },";
+                msg1 += "   {  ";
+                msg1 += "     \"question\": \"Mother's maiden name?\",";
+                msg1 += "     \"answer\": \"" + Question3 + "\"";
+                msg1 += "         },";
+                msg1 += "   {";
+                msg1 += "    \"question\": \"Best friend in school?\",";
+                msg1 += "    \"answer\": \"" + Question4 + "\"";
+                msg1 += "         } ";
+                msg1 += "  ]";
+                msg1 += " }";
 
-            
+                QnAResult qnARes = await VerifyAnswersAsync(msg1);
 
-              /*  var link = "http://zinsureplus.mybluemix.net/#/passwordreset";
 
-                msg = "You have been authenticated successfully\n\nPlease click this [link](" + link + ")  to reset your password\n\n";
-                await context.PostAsync(msg);
-                context.Wait(this.MessageReceived);
-                */
-                msg = "You have been authenticated successfully\n\n";
-                msg += "Do you want to reset the password now?\n\n Type '**Yes**' or '**No**' ";
+                if (qnARes.result.IndexOf("true") > -1)
+                {
 
-                   /*
-                PromptDialog.Choice(
-             context,
-             AfterSuccessQnAAsync,
-             msg,
-             "Didn't get your answer!",
-             promptStyle: PromptStyle.None);
 
-                    */
+
+                    /*  var link = "http://zinsureplus.mybluemix.net/#/passwordreset";
+
+                      msg = "You have been authenticated successfully\n\nPlease click this [link](" + link + ")  to reset your password\n\n";
+                      await context.PostAsync(msg);
+                      context.Wait(this.MessageReceived);
+                      */
+                    msg = "You have been authenticated successfully\n\n";
+                    msg += "Do you want to reset the password now?\n\n Type '**Yes**' or '**No**' ";
+
+                    /*
+                 PromptDialog.Choice(
+              context,
+              AfterSuccessQnAAsync,
+              msg,
+              "Didn't get your answer!",
+              promptStyle: PromptStyle.None);
+
+                     */
                     PromptDialog.Confirm(
                    context,
                    AfterSuccessQnAAsync,
@@ -368,12 +369,12 @@ namespace ZplusBot
                      */
                 }
                 else
-            {
-                msg = "Sorry, we couldn't authenticate you. Please check your details and contact us again. Have a good day.";
-                await context.PostAsync(msg);
-                context.Wait(this.MessageReceived);
+                {
+                    msg = "Sorry, we couldn't authenticate you. Please check your details and contact us again. Have a good day.";
+                    await context.PostAsync(msg);
+                    context.Wait(this.MessageReceived);
 
-            }
+                }
             }
             catch (FormCanceledException<QnAFormFlow> e)
             {
@@ -398,27 +399,27 @@ namespace ZplusBot
 
 
 
-    public async Task AfterSuccessQnAAsync(IDialogContext context, IAwaitable<bool> argument)
-    {
+        public async Task AfterSuccessQnAAsync(IDialogContext context, IAwaitable<bool> argument)
+        {
             var msg = "Please enter your new password";
-        var confirm = await argument;
+            var confirm = await argument;
             if (confirm)
             {
-                
-                    PromptDialog.Text(
-                      context,
-                      AfterConfirmPassAsync,
-                      msg,
-                      "Didn't get your answer!");
-               
+
+                PromptDialog.Text(
+                  context,
+                  AfterConfirmPassAsync,
+                  msg,
+                  "Didn't get your answer!");
+
             }
             else
             {
                 await context.PostAsync("You have not confirmed to reset the password.  Thank you for contacting us. Have a good day.");
                 context.Wait(this.MessageReceived);
             }
-        // 
-    }
+            // 
+        }
 
         public async Task AfterConfirmPassAsync(IDialogContext context, IAwaitable<string> argument)
         {
@@ -465,9 +466,9 @@ namespace ZplusBot
             Random random = new Random((int)DateTime.Now.Ticks);
             //ar chars;
             string input = "abcdefghijklmnopqrstuvwxyz0123456789";
-                var chars = Enumerable.Range(0, 6)
-                                  .Select(x => input[random.Next(0, input.Length)]);
-                stringArr1 = new string(chars.ToArray());
+            var chars = Enumerable.Range(0, 6)
+                              .Select(x => input[random.Next(0, input.Length)]);
+            stringArr1 = new string(chars.ToArray());
 
 
             chars = Enumerable.Range(0, 6)
@@ -493,11 +494,11 @@ namespace ZplusBot
             if (Pass1.Length == Pass2.Length)
             {
                 if (Pass1.IndexOf(Pass2) > -1)
-                { 
+                {
                     msg = "Your password reset is successful. \n\n";
                     //    msg += "Request you to use the Token : **" + Rand1.ToUpper() + "** and newly reset password to login to your system. \n\n";
                     msg += "Request you to use the Token : **";
-                    msg += stringArr1.ToUpper() + "-" + stringArr2.ToUpper() + "-" + stringArr3.ToUpper() + "-" + stringArr4.ToUpper() + "-"  + stringArr5.ToUpper();
+                    msg += stringArr1.ToUpper() + "-" + stringArr2.ToUpper() + "-" + stringArr3.ToUpper() + "-" + stringArr4.ToUpper() + "-" + stringArr5.ToUpper();
                     msg += "** and newly reset password to login to your system. \n\n";
                     msg += "Thank you for contacting us. Have a good day. ";
 
@@ -541,7 +542,7 @@ namespace ZplusBot
              msg,
              "Didn't get your answer!  Type '**Yes**' or '**No**'",
              promptStyle: PromptStyle.None);
-               
+
             }
 
 
@@ -580,13 +581,13 @@ namespace ZplusBot
 
         */
 
-         /*   return new FormBuilder<UserDetailsFormFlow>()
-                    .Message("Please answer few questions for authentication!")
-                    .Field(nameof(UserDetailsFormFlow.USERID))
-                    .Field(nameof(UserDetailsFormFlow.AssetID))
-                    .Confirm("Is this your selection? \n\n User ID: {USERID} \n\n Asset ID: {AssetID} \n\n Type '**Yes**' or '**No**' ")
-                    .Build();
-*/
+            /*   return new FormBuilder<UserDetailsFormFlow>()
+                       .Message("Please answer few questions for authentication!")
+                       .Field(nameof(UserDetailsFormFlow.USERID))
+                       .Field(nameof(UserDetailsFormFlow.AssetID))
+                       .Confirm("Is this your selection? \n\n User ID: {USERID} \n\n Asset ID: {AssetID} \n\n Type '**Yes**' or '**No**' ")
+                       .Build();
+   */
             return CreateCustomForm<UserDetailsFormFlow>()
                  .Message("Please answer few questions for authentication!")
                  .Field(nameof(UserDetailsFormFlow.USERID))
@@ -828,5 +829,5 @@ namespace ZplusBot
 
 
 
-}
+    }
 }
